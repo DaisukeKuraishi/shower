@@ -1,0 +1,14 @@
+<p>
+  <b>タイトル：<%= @drop.title %></b>
+</p>
+<p>
+  <b>理由：<%= @drop.reason %></b>
+</p>
+<p>
+  <b>公開鍵：<%= @drop.p_key %></b>
+</p>
+<p>
+  <b>SNS：<%= @drop.sns_url %></b>
+</p>
+<%= link_to "編集する", edit_drop_path(@drop) %>
+<%= link_to "削除する", drop_path(@drop), method: :delete %>

@@ -1,0 +1,27 @@
+<h1>新規登録フォーム</h1>
+
+<% if flash["alert"].present? %>
+  <% flash["alert"].each do |value| %>
+    <%= content_tag(:div, value) %>
+  <% end %>
+<% end %>
+
+<%= form_with model: @drop, local: true do |form| %>
+  <p>
+    タイトル<br>
+    <%= form.text_field :title %>
+  </p>
+  <p>
+    理由：<br>
+    <%= form.text_area :reason %>
+  </p>
+  <p>
+    公開鍵<br>
+    <%= form.text_field :p_key %>
+  </p>
+  <p>
+    SNS   ：<br>
+    <%= form.text_field :sns_url %>
+  </p>
+  <%= form.submit "登録" %>
+<% end %>

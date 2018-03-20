@@ -1,0 +1,14 @@
+<h1>理由一覧</h1>
+
+<% if flash["alert"].present? %>
+  <% flash["alert"].each do |value| %>
+    <%= content_tag(:div, value) %>
+  <% end %>
+<% end %>
+
+<ul>
+  <% @drops.each do |drop| %>
+    <li><%= link_to drop.title, drop_path(drop) %></li>
+  <% end %>
+</ul>
+<%= link_to "登録する", new_drop_path %>
